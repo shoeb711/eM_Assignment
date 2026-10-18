@@ -32,7 +32,7 @@ export async function listTasks(user, q) {
   const { page, pageSize, limitSql } = pagination(q);
   const { rows } = await query(
     `SELECT t.id, t.project_id, p.code AS project_code, p.name AS project_name,
-            t.title, t.status, t.priority, t.start_date, t.due_date, t.weight, t.progress, t.completed_at,
+            t.title, t.description, t.status, t.priority, t.start_date, t.due_date, t.weight, t.progress, t.completed_at,
             t.assignee_id, a.full_name AS assignee_name, t.version,
             (t.status <> 'DONE' AND t.due_date < ${asOf}) AS is_overdue,
             (t.status <> 'DONE' AND t.due_date BETWEEN ${asOf} AND ${asOf}::date + 7) AS is_due_soon,

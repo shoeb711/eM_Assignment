@@ -99,5 +99,10 @@ server/              Express API (routes -> services -> database)
     middleware/      login check, request ID, logging, error handling
     utils/           access rules, list/filter helpers, errors, logger
 docs/                API route list, Postman collection
-client/              React frontend
+client/              React frontend (Vite + Tailwind)
+  src/api/           apiFetch() + every endpoint in one file (endpoints.js)
+  src/auth/          who is signed in (AuthContext)
+  src/components/    reusable UI: Layout, DataTable, Modal, form fields, badges, toasts
+  src/hooks/         useApiMutation (save + refresh from server), useListParams (filters in URL)
+  src/pages/         one file per screen; project tabs in pages/project/
 ```
