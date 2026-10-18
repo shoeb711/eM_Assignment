@@ -193,7 +193,7 @@
           ]
         },
         {
-          "name": "Update my own task progress -> 200",
+          "name": "List my in-progress tasks -> 200",
           "request": {
             "method": "GET",
             "header": [
