@@ -63,4 +63,5 @@ export const activityApi = {
   markRead: (id) => apiFetch(`/notifications/${id}/read`, { method: 'POST' }),
   auditEvents: (params) => apiFetch(`/audit-events${toQueryString(params)}`),
   automationRuns: () => apiFetch('/automation-runs'),
+  runAutomation: (simulateFailure) => apiFetch('/automation-runs/run', { method: 'POST', body: { simulateFailure } }),
 };

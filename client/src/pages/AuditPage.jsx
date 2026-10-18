@@ -1,15 +1,16 @@
 // Administrator view: audit trail (who did what, when, with which request ID) and automation run history.
 import { useState } from 'react';
+import { useApiMutation } from '../hooks/useApiMutation.js';
 import { useQuery, keepPreviousData } from '@tanstack/react-query';
 import { activityApi } from '../api/endpoints.js';
-import { Badge, Card, PageHeader, QueryState, Tabs } from '../components/ui.jsx';
+import { Badge, Button, Card, PageHeader, QueryState, Tabs } from '../components/ui.jsx';
 import { FilterSelect } from '../components/form.jsx';
 import { DataTable, Pagination } from '../components/DataTable.jsx';
 import { formatDateTime } from '../utils/format.js';
 
 const ACTIONS = ['LOGIN', 'LOGIN_FAILED', 'PROJECT_CREATED', 'PROJECT_UPDATED', 'TASK_CREATED', 'TASK_UPDATED', 'COST_DRAFTED', 'COST_POSTED',
   'BUDGET_REVISION_REQUESTED', 'BUDGET_REVISION_APPROVED', 'BUDGET_REVISION_REJECTED', 'CHANGE_REQUEST_SUBMITTED',
-  'CHANGE_REQUEST_APPROVED', 'CHANGE_REQUEST_REJECTED', 'CHANGE_REQUEST_RETURNED', 'FORECAST_UPDATED'];
+  'CHANGE_REQUEST_APPROVED', 'CHANGE_REQUEST_REJECTED', 'CHANGE_REQUEST_RETURNED', 'FORECAST_UPDATED', 'AUTOMATION_TRIGGERED'];
 
 export function AuditPage() {
   const [tab, setTab] = useState('audit');
@@ -56,6 +57,11 @@ function AuditLog() {
 
 function AutomationRuns() {
   const query = useQuery({ queryKey: ['automationRuns'], queryFn: activityApi.automationRuns });
+  const [simulateFailure, setSimulateFailure] = useState(false);
+  const run = useApiMutation(() => activityApi.runAutomation(simulateFailure), {
+    invalidate: ['automationRuns', 'notifications', 'audit'],
+    success: (r) => `Run finished: ${r.status} after ${r.attempts} attempt${r.attempts > 1 ? 's' : ''} · ${r.created} new alert${r.created === 1 ? '' : 's'}`,
+  });
   const columns = [
     { key: 'started', label: 'Started', render: (r) => formatDateTime(r.started_at) },
     { key: 'job', label: 'Job', render: (r) => <span className="font-mono text-xs">{r.job_name}</span> },
@@ -66,6 +72,20 @@ function AutomationRuns() {
   ];
   return (
     <Card>
+      <div className="mb-4 rounded-md bg-slate-50 p-3 text-sm text-slate-700">
+        <p className="font-medium">Overdue task alerts</p>
+        <p className="mt-0.5 text-xs text-slate-500">
+          Runs automatically every few minutes. Creates one in-app alert per overdue task (to the assignee, or the project manager if unassigned).
+          Each alert has a unique key, so re-running never creates duplicates. A failed attempt is logged and retried (up to 3 attempts).
+        </p>
+        <div className="mt-3 flex flex-wrap items-center gap-3">
+          <Button loading={run.isPending} onClick={() => run.mutate()}>Run now</Button>
+          <label className="flex items-center gap-1.5 text-xs">
+            <input type="checkbox" checked={simulateFailure} onChange={(e) => setSimulateFailure(e.target.checked)} />
+            Simulate a failure on the first attempt (to demonstrate retry)
+          </label>
+        </div>
+      </div>
       <QueryState query={query}>
         {(data) => <DataTable columns={columns} rows={data.items} emptyMessage="The automation has not run yet." />}
       </QueryState>

@@ -2,6 +2,7 @@
 // POST /api/notifications/:id/read  - mark one of MY notifications as read
 // GET  /api/audit-events            - audit log (Admin only)
 // GET  /api/automation-runs         - automation run history (Admin only)
+// POST /api/automation-runs/run     - run the overdue-task automation now (Admin only)
 import { Router } from 'express';
 import { z } from 'zod';
 import { query } from '../db.js';
@@ -9,6 +10,8 @@ import { requireRole } from '../middleware/auth.js';
 import { notFound } from '../utils/errors.js';
 import { id } from '../utils/schemas.js';
 import { createFilters, pagination, pagedResult } from '../utils/listQuery.js';
+import { runOverdueTaskAlerts } from '../jobs/overdueTaskAlerts.js';
+import { logAudit } from '../services/auditService.js';
 
 export const activityRoutes = Router();
 
@@ -69,4 +72,14 @@ activityRoutes.get('/automation-runs', requireRole('ADMIN'), async (req, res) =>
        FROM automation_runs r ORDER BY r.started_at DESC, r.id DESC LIMIT 50`,
   );
   res.json({ items: rows });
+});
+
+activityRoutes.post('/automation-runs/run', requireRole('ADMIN'), async (req, res) => {
+  const { simulateFailure } = z.object({ simulateFailure: z.boolean().optional().default(false) }).parse(req.body ?? {});
+  const result = await runOverdueTaskAlerts({ simulateFailure });
+  await logAudit({ query }, {
+    actorId: req.user.id, action: 'AUTOMATION_TRIGGERED', entityType: 'automation_run', entityId: result.runIds.at(-1),
+    details: result, requestId: req.id,
+  });
+  res.json(result);
 });

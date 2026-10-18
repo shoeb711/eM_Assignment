@@ -98,5 +98,6 @@ Drill-down lists also accept `projectStatus` (`/tasks`, `/costs`, `/risks`) so a
 | POST | `/notifications/:id/read` | owner of the notification | |
 | GET | `/audit-events` | Admin | `action, entityType, entityId, actorId, page` |
 | GET | `/automation-runs` | Admin | automation run history |
+| POST | `/automation-runs/run` | Admin | run the overdue-task automation now · body `{ simulateFailure?: boolean }` |
 
 A ready-made Postman collection is in `docs/postman_collection.json`.

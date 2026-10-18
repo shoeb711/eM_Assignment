@@ -85,6 +85,20 @@ Reporting snapshot date: **30 September 2026**.
 - After any save, the frontend refetches the dashboard from the server; the browser never patches KPI values.
 - Project health rule: **Red** = forecast overrun or 3+ overdue tasks; **Amber** = ≥90% of budget used, any overdue task, or an open high-exposure risk; **Green** otherwise.
 
+## Automation - overdue task alerts
+- Code: `server/src/jobs/overdueTaskAlerts.js`. Trigger: every `AUTOMATION_INTERVAL_MINUTES` (default 5) while the API runs, or **Audit & automation → Automation runs → Run now** (admin).
+- Rule: every task that is not done and past its due date (on an open project) gets one in-app alert to its assignee, or to the project manager when unassigned.
+- Run log: one row per attempt in `automation_runs` (RUNNING → SUCCESS / FAILED with the error).
+- No duplicates: each alert has a unique `event_key` (`TASK_OVERDUE:task:42`) and the insert uses `ON CONFLICT DO NOTHING`, so re-runs and parallel runs are safe.
+- Retry: a failed attempt is rolled back, logged as FAILED and retried (up to 3 attempts). Tick *Simulate a failure* before *Run now* to see it.
+
+## Automated tests
+```powershell
+cd server
+npm test
+```
+10 Vitest + Supertest checks against a **separate test database** (`pmo_portal_test`, created and seeded fresh each run - your demo data is never touched): contributor denied approval and cost posting, hidden projects, no self-approval, one history row per decision, allowed status transitions, finance formulas, drafts excluded from actual spend, automation duplicate-protection and retry, admin-only trigger.
+
 ## Database protection rules (enforced by PostgreSQL itself)
 - Posted cost transactions cannot be edited or deleted (trigger).
 - Change-request history and audit events are append-only (trigger).

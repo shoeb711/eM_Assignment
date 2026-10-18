@@ -19,6 +19,9 @@ export const config = {
   // A risk/issue with probability x impact >= 15 (out of 25) is "high exposure".
   highRiskScore: 15,
 
+  // How often the overdue-task automation runs automatically (0 = only manual "Run now").
+  automationIntervalMinutes: Number(process.env.AUTOMATION_INTERVAL_MINUTES ?? 5),
+
   sessionCookieName: 'pmo_session',
   sessionHours: 8,
 };

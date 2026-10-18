@@ -10,7 +10,8 @@
     "db:migrate": "node scripts/migrate.js",
     "db:generate": "node seed/generate.js",
     "db:import": "node seed/import.js",
-    "db:seed": "npm run db:generate && npm run db:import"
+    "db:seed": "npm run db:generate && npm run db:import",
+    "test": "vitest run"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -22,5 +23,9 @@
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.13.1",
     "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.1",
+    "vitest": "^3.2.7"
   }
 }
