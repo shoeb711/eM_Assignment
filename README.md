@@ -1,168 +1,106 @@
-# eMinds Assignment — Project Portfolio & Financial Control Portal
+# eMinds Assignment - Project Portfolio & Financial Control Portal
 
-A working PMO portal: project portfolio, tasks & milestones, risks & issues, change-request approvals,
-financial control (budgets, revisions, costs, forecasts, EAC) and a live executive dashboard - with
-role-based access enforced on the server, an automation, automated tests and full documentation.
+A web app for a PMO team to manage projects, tasks, risks, change requests and project finances in one place,
+with a live executive dashboard on top.
 
-**Stack:** React 19 (Vite, Tailwind, TanStack Query, Recharts) → Node.js / Express 5 → PostgreSQL 16 (Docker, `pg` + plain SQL migrations) · Vitest + Supertest.
+- **Frontend:** React 19 + Vite + Tailwind
+- **Backend:** Node.js + Express 5
+- **Database:** PostgreSQL 16, running in Docker
+- **Tests:** Vitest + Supertest
 
-## Where to find each requirement
+---
 
-| Assignment section | Where |
-|---|---|
-| 1–2 Business journeys & modules | The app (see *Demo walkthrough* below) · [`docs/testing.md`](docs/testing.md) checklist |
-| 3.1 Frontend | `client/src` - responsive shell, forms with validation & confirmations, search/filter/sort/pagination, loading/empty/error states |
-| 3.2 Backend & API | `server/src` (routes → services → db) · [`docs/api-routes.md`](docs/api-routes.md) · `docs/postman_collection.json` |
-| 3.3 Database design | `server/db/migrations/001_init.sql` · [`docs/er-diagram.md`](docs/er-diagram.md) |
-| 3.4 Auth, RBAC, security | [`docs/security.md`](docs/security.md) |
-| 3.5 Quality: logging, concurrency, tests | [`docs/architecture.md`](docs/architecture.md) · [`docs/testing.md`](docs/testing.md) · `server/logs/app.log` · `npm test` |
-| 4 Financial module | Project → *Finance* tab · `server/src/sql/projectFinancials.js` |
-| 5 Executive dashboard | *Dashboard* page · `server/src/services/dashboardService.js` |
-| 6 Synthetic data & CSVs | `server/seed/` · `data/csv/` · [`docs/data-dictionary.md`](docs/data-dictionary.md) |
-| 7 SQL queries & KPI reconciliation | [`docs/sql/report-queries.sql`](docs/sql/report-queries.sql) · [`docs/kpi-reconciliation.md`](docs/kpi-reconciliation.md) |
-| 8.1 Business automation | `server/src/jobs/overdueTaskAlerts.js` · *Audit & automation* page |
-| 9 AI-assisted development | [`docs/ai-development-log.md`](docs/ai-development-log.md) |
-| 10 Acceptance tests A–H | [`docs/testing.md`](docs/testing.md) |
+## Setup
 
-### Scope notes
-- **Power BI (.pbix) - not delivered.** I have no hands-on Power BI experience and chose to spend the time on a fully working application. The four SQL report queries and the KPI reconciliation (SQL vs web dashboard) are included.
-- **MS Access / VBA (optional) - not delivered.**
-- **Hosting:** runs locally (allowed by the brief).
+**You need:** Node.js 20+ and Docker Desktop (running).
 
-## Demo walkthrough (5 minutes)
-Password for every user: `Demo@123`. Reset to the baseline any time: `cd server && npm run db:import`.
-
-1. **Layla (Admin)** → *Dashboard*: KPIs, charts, filters; click *Actual spend* → the exact transactions (total matches the KPI).
-2. **Priya (PM)** → *Projects* → **+ New project** → add a task (journey 1).
-3. **Chen (Contributor)** → *Tasks* → *My tasks* → update progress (journey 2); note there is no *Add cost* button anywhere.
-4. **Priya** → PRJ-002 → *Milestones* / *Risks* → edit (journey 3) → *Finance* → **+ Add cost**, date ≤ 30 Sep 2026, *Post immediately* (journey 4).
-5. **Chen** → PRJ-002 → *Change requests* → submit; **Priya** → *Change requests* → approve with a reason → history shows 2 entries (journey 5).
-6. **Layla** → *Dashboard* → filter by department → drill into overdue tasks (journey 6) → *Audit & automation* → **Run now** (tick *Simulate a failure* to see the retry).
-7. **Postman** → import `docs/postman_collection.json` → run folder 1 → contributor gets 403 on approval and cost posting.
-
-## Prerequisites
-- Node.js 20+
-- Docker Desktop (running)
-
-## Run locally (Windows PowerShell)
+Run these in PowerShell from the project folder:
 
 ```powershell
-# 1. Create env files from the templates (first time only)
+# 1. Create the env files (first time only)
 Copy-Item .env.example .env
 Copy-Item server\.env.example server\.env
 
-# 2. Start PostgreSQL in Docker
+# 2. Start the database
 docker compose up -d
-
-# 3. Set up the database and start the API  (terminal 1)
-cd server
-npm install
-npm run db:migrate   # creates/updates database tables
-npm run db:seed      # generates the CSVs and loads them into the database
-npm run dev          # http://localhost:4000/api/health
-
-# 4. Start the web app  (terminal 2)
-cd client
-npm install
-npm run dev          # http://localhost:5173
 ```
 
-### Database commands (run inside `server/`)
-| Command | What it does |
-|---|---|
-| `npm run db:migrate` | Runs any new SQL files in `server/db/migrations/` |
-| `npm run db:generate` | Regenerates the CSV files in `data/csv/` (fixed seed → identical output every time) |
-| `npm run db:import` | Empties the tables and loads `data/csv/` — also resets the demo to its baseline |
-| `npm run db:seed` | `db:generate` + `db:import` |
+**Terminal 1 - API**
+```powershell
+cd server
+npm install
+npm run db:migrate   # create the tables
+npm run db:seed      # load the demo data
+npm run dev          # API on http://localhost:4000
+```
 
-## Demo data
+**Terminal 2 - Web app**
+```powershell
+cd client
+npm install
+npm run dev          # open http://localhost:5173
+```
 
-All data is **fictional**, generated by `server/seed/generate.js` from the story in `server/seed/scenario.js`.
-Reporting snapshot date: **30 September 2026**.
+To reset the demo data at any time: `cd server` then `npm run db:import`.
 
-**Demo password for every user:** `Demo@123`
+---
+
+## Log in
+
+Password for every user: **`Demo@123`**
 
 | Email | Role |
 |---|---|
-| layla.haddad@demo.local | Administrator |
+| layla.haddad@demo.local | Admin - sees everything |
 | priya.nair@demo.local | Project Manager (PRJ-002, 005, 009) |
-| daniel.brooks@demo.local | Project Manager (PRJ-004, 006, 010) |
-| omar.farouk@demo.local | Project Manager (PRJ-001) |
-| chen.wei@demo.local | Contributor |
-| aisha.khan@demo.local | Contributor |
+| chen.wei@demo.local | Contributor - own tasks only |
 
-(16 users in total — see `data/csv/users.csv`.)
+---
 
-### Edge cases built into the data
-| Case | Where |
-|---|---|
-| Project with no posted spend | PRJ-004 (draft costs only) |
-| Project nearing its budget | PRJ-003 (93% used) |
-| Project forecast to exceed budget | PRJ-002 and PRJ-010 (EAC > approved budget) |
-| Completed project | PRJ-005 |
-| Project without forecast data | PRJ-008 — EAC falls back to actual spend and is flagged "no forecast" |
-| Overdue incomplete tasks | 15 tasks |
-| Task due exactly on the reporting date | 1 task in PRJ-001 |
-| Unassigned task | 1 task in PRJ-006 |
-| Closed high-exposure risk (must not count as open) | PRJ-009, score 20 |
-| Open high-exposure risk | PRJ-002, score 20 (and others) |
-| Returned / rejected change requests | 2 returned, 3 rejected |
-| Approved / pending / rejected budget revisions | PRJ-002 & PRJ-009 approved, PRJ-001 & PRJ-010 pending, PRJ-006 rejected |
-| Draft and posted costs | 8 drafts, 117 posted |
-| Costs after the reporting cutoff | 3 posted in October 2026 |
+## 5-minute demo
 
-## API
-- Route list with roles and rules: [`docs/api-routes.md`](docs/api-routes.md)
-- Postman collection (incl. the "Contributor is denied" test): `docs/postman_collection.json`
-- Server log (one JSON line per request, with request ID): `server/logs/app.log`
+1. **Layla (Admin)** → *Dashboard*: KPIs, charts and filters. Click *Actual spend* to see the transactions behind it.
+2. **Priya (PM)** → *Projects* → **+ New project** → add a task.
+3. **Chen (Contributor)** → *Tasks* → update progress on his task. He has no *Add cost* or *Approve* buttons.
+4. **Priya** → PRJ-002 → *Finance* → **+ Add cost** (date on or before 30 Sep 2026, *Post immediately*). Actual spend updates.
+5. **Chen** → PRJ-002 → *Change requests* → submit one. **Priya** approves it with a reason; the history shows 2 entries.
+6. **Layla** → *Audit & automation* → **Run now** (tick *Simulate a failure* to see the retry).
 
-## Executive dashboard
-- One endpoint, `GET /api/dashboard`, built in `server/src/services/dashboardService.js`. Every KPI is a separate SQL aggregate over one table, restricted to the filtered project scope, so joins never inflate totals.
-- Finance formulas are shared with the project finance page (`server/src/sql/projectFinancials.js`), so both always agree.
-- Every KPI card and chart drills down to the exact records behind it (tasks, cost transactions, risks), keeping the same filters.
-- After any save, the frontend refetches the dashboard from the server; the browser never patches KPI values.
-- Project health rule: **Red** = forecast overrun or 3+ overdue tasks; **Amber** = ≥90% of budget used, any overdue task, or an open high-exposure risk; **Green** otherwise.
+---
 
-## Automation - overdue task alerts
-- Code: `server/src/jobs/overdueTaskAlerts.js`. Trigger: every `AUTOMATION_INTERVAL_MINUTES` (default 5) while the API runs, or **Audit & automation → Automation runs → Run now** (admin).
-- Rule: every task that is not done and past its due date (on an open project) gets one in-app alert to its assignee, or to the project manager when unassigned.
-- Run log: one row per attempt in `automation_runs` (RUNNING → SUCCESS / FAILED with the error).
-- No duplicates: each alert has a unique `event_key` (`TASK_OVERDUE:task:42`) and the insert uses `ON CONFLICT DO NOTHING`, so re-runs and parallel runs are safe.
-- Retry: a failed attempt is rolled back, logged as FAILED and retried (up to 3 attempts). Tick *Simulate a failure* before *Run now* to see it.
+## Run the tests
 
-## Automated tests
 ```powershell
 cd server
 npm test
 ```
-10 Vitest + Supertest checks against a **separate test database** (`pmo_portal_test`, created and seeded fresh each run - your demo data is never touched): contributor denied approval and cost posting, hidden projects, no self-approval, one history row per decision, allowed status transitions, finance formulas, drafts excluded from actual spend, automation duplicate-protection and retry, admin-only trigger.
 
-## Database protection rules (enforced by PostgreSQL itself)
-- Posted cost transactions cannot be edited or deleted (trigger).
-- Change-request history and audit events are append-only (trigger).
-- Nobody can decide their own change request or budget revision (CHECK constraint).
-- Amounts must be positive, progress 0–100, probability/impact 1–5, end date ≥ start date (CHECK constraints).
+Runs 10 API tests against a separate test database, so the demo data is never touched.
 
-## Project structure
-```
-docker-compose.yml   PostgreSQL container
-data/csv/            generated CSV files (one per table)
-server/              Express API (routes -> services -> database)
-  db/migrations/     numbered .sql files that build the database
-  seed/              data generator (scenario + generate) and CSV import
-  scripts/           migration runner
-  src/
-    routes/          URLs + input validation (zod)
-    services/        business rules (one file per module)
-    sql/             shared SQL for financial KPIs
-    middleware/      login check, request ID, logging, error handling
-    utils/           access rules, list/filter helpers, errors, logger
-docs/                API routes, Postman collection, ER diagram, data dictionary, SQL queries,
-                     architecture, security, testing, KPI reconciliation, AI development log
-client/              React frontend (Vite + Tailwind)
-  src/api/           apiFetch() + every endpoint in one file (endpoints.js)
-  src/auth/          who is signed in (AuthContext)
-  src/components/    reusable UI: Layout, DataTable, Modal, form fields, badges, toasts
-  src/hooks/         useApiMutation (save + refresh from server), useListParams (filters in URL)
-  src/pages/         one file per screen; project tabs in pages/project/
-```
+---
+
+## Where to find things
+
+| What | Where |
+|---|---|
+| API routes and who can call them | [`docs/api-routes.md`](docs/api-routes.md) · Postman: `docs/postman_collection.json` |
+| Database design (ER diagram) | [`docs/er-diagram.md`](docs/er-diagram.md) · tables: `server/db/migrations/001_init.sql` |
+| Demo data and CSVs | `data/csv/` · [`docs/data-dictionary.md`](docs/data-dictionary.md) |
+| SQL report queries | [`docs/sql/report-queries.sql`](docs/sql/report-queries.sql) |
+| Dashboard KPIs checked against SQL | [`docs/kpi-reconciliation.md`](docs/kpi-reconciliation.md) |
+| Architecture, security | [`docs/architecture.md`](docs/architecture.md) · [`docs/security.md`](docs/security.md) |
+| Tests and acceptance checklist (A-H) | [`docs/testing.md`](docs/testing.md) |
+| How AI was used | [`docs/ai-development-log.md`](docs/ai-development-log.md) |
+| Presentation | `docs/eMinds-PMO-Portal-Presentation.pptx` |
+
+**Code layout:** `server/src` goes routes → services → database (business rules live in `services/`).
+`client/src/pages` has one file per screen.
+
+---
+
+## Not included
+
+- **Power BI** - I don't have hands-on Power BI experience, so I provided the SQL report queries and a
+  SQL-vs-dashboard reconciliation instead.
+- **MS Access / VBA** (optional part).
+- **Hosting** - the app runs locally, which the brief allows.
