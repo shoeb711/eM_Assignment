@@ -73,6 +73,11 @@ Reporting snapshot date: **30 September 2026**.
 | Draft and posted costs | 8 drafts, 117 posted |
 | Costs after the reporting cutoff | 3 posted in October 2026 |
 
+## API
+- Route list with roles and rules: [`docs/api-routes.md`](docs/api-routes.md)
+- Postman collection (incl. the "Contributor is denied" test): `docs/postman_collection.json`
+- Server log (one JSON line per request, with request ID): `server/logs/app.log`
+
 ## Database protection rules (enforced by PostgreSQL itself)
 - Posted cost transactions cannot be edited or deleted (trigger).
 - Change-request history and audit events are append-only (trigger).
@@ -87,6 +92,12 @@ server/              Express API (routes -> services -> database)
   db/migrations/     numbered .sql files that build the database
   seed/              data generator (scenario + generate) and CSV import
   scripts/           migration runner
-  src/               API source code
+  src/
+    routes/          URLs + input validation (zod)
+    services/        business rules (one file per module)
+    sql/             shared SQL for financial KPIs
+    middleware/      login check, request ID, logging, error handling
+    utils/           access rules, list/filter helpers, errors, logger
+docs/                API route list, Postman collection
 client/              React frontend
 ```
