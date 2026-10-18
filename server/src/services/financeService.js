@@ -88,6 +88,7 @@ export async function listCosts(user, q) {
   if (q.projectId) filters.add('t.project_id = ?', q.projectId);
   if (q.departmentId) filters.add('p.department_id = ?', q.departmentId);
   if (q.managerId) filters.add('p.owner_id = ?', q.managerId);
+  if (q.projectStatus) filters.add('p.status = ?', q.projectStatus);
   if (q.categoryId) filters.add('t.category_id = ?', q.categoryId);
   if (q.status) filters.add('t.status = ?', q.status);
   if (q.from) filters.add('t.txn_date >= ?', q.from);

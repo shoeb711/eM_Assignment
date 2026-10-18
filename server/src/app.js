@@ -18,6 +18,7 @@ import { deliveryRoutes } from './routes/deliveryRoutes.js';
 import { changeRequestRoutes } from './routes/changeRequestRoutes.js';
 import { financeRoutes } from './routes/financeRoutes.js';
 import { activityRoutes } from './routes/activityRoutes.js';
+import { dashboardRoutes } from './routes/dashboardRoutes.js';
 
 export const app = express();
 
@@ -47,6 +48,7 @@ app.use('/api', deliveryRoutes);
 app.use('/api', changeRequestRoutes);
 app.use('/api', financeRoutes);
 app.use('/api', activityRoutes);
+app.use('/api', dashboardRoutes);
 
 app.use('/api', notFoundHandler);
 app.use(errorHandler);

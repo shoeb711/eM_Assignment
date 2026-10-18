@@ -21,6 +21,7 @@ export async function listTasks(user, q) {
   if (q.projectId) filters.add('t.project_id = ?', q.projectId);
   if (q.departmentId) filters.add('p.department_id = ?', q.departmentId);
   if (q.managerId) filters.add('p.owner_id = ?', q.managerId);
+  if (q.projectStatus) filters.add('p.status = ?', q.projectStatus);
   if (q.assigneeId) filters.add('t.assignee_id = ?', q.assigneeId);
   if (q.mine) filters.add('t.assignee_id = ?', user.id);
   if (q.unassigned) filters.addFixed('t.assignee_id IS NULL');

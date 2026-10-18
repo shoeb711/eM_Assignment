@@ -16,6 +16,7 @@ export function Layout() {
     { to: '/dashboard', label: 'Dashboard' },
     { to: '/projects', label: 'Projects' },
     { to: '/tasks', label: 'Tasks' },
+    { to: '/risks', label: 'Risks & issues' },
     { to: '/change-requests', label: 'Change requests' },
     { to: '/costs', label: 'Costs' },
     { to: '/notifications', label: 'Notifications', badge: unread },

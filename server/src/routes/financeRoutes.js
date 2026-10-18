@@ -26,6 +26,7 @@ const costListSchema = z.object({
   projectId: optionalId,
   departmentId: optionalId,
   managerId: optionalId,
+  projectStatus: z.enum(['PLANNING', 'ACTIVE', 'ON_HOLD', 'COMPLETED', 'CANCELLED']).optional(),
   categoryId: optionalId,
   status: z.enum(['DRAFT', 'POSTED']).optional(),
   from: dateString.optional(),

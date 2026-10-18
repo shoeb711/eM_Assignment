@@ -78,6 +78,13 @@ Reporting snapshot date: **30 September 2026**.
 - Postman collection (incl. the "Contributor is denied" test): `docs/postman_collection.json`
 - Server log (one JSON line per request, with request ID): `server/logs/app.log`
 
+## Executive dashboard
+- One endpoint, `GET /api/dashboard`, built in `server/src/services/dashboardService.js`. Every KPI is a separate SQL aggregate over one table, restricted to the filtered project scope, so joins never inflate totals.
+- Finance formulas are shared with the project finance page (`server/src/sql/projectFinancials.js`), so both always agree.
+- Every KPI card and chart drills down to the exact records behind it (tasks, cost transactions, risks), keeping the same filters.
+- After any save, the frontend refetches the dashboard from the server; the browser never patches KPI values.
+- Project health rule: **Red** = forecast overrun or 3+ overdue tasks; **Amber** = ≥90% of budget used, any overdue task, or an open high-exposure risk; **Green** otherwise.
+
 ## Database protection rules (enforced by PostgreSQL itself)
 - Posted cost transactions cannot be edited or deleted (trigger).
 - Change-request history and audit events are append-only (trigger).

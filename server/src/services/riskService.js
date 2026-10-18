@@ -18,6 +18,7 @@ export async function listRisks(user, q) {
   if (q.projectId) filters.add('r.project_id = ?', q.projectId);
   if (q.departmentId) filters.add('p.department_id = ?', q.departmentId);
   if (q.managerId) filters.add('p.owner_id = ?', q.managerId);
+  if (q.projectStatus) filters.add('p.status = ?', q.projectStatus);
   if (q.type) filters.add('r.type = ?', q.type);
   if (q.status) filters.add('r.status = ?', q.status);
   if (q.open) filters.addFixed(`r.status <> 'CLOSED'`);

@@ -8,6 +8,7 @@ import { DashboardPage } from './pages/DashboardPage.jsx';
 import { ProjectsPage } from './pages/ProjectsPage.jsx';
 import { ProjectDetailPage } from './pages/ProjectDetailPage.jsx';
 import { TasksPage } from './pages/TasksPage.jsx';
+import { RisksPage } from './pages/RisksPage.jsx';
 import { ChangeRequestsPage } from './pages/ChangeRequestsPage.jsx';
 import { CostsPage } from './pages/CostsPage.jsx';
 import { NotificationsPage } from './pages/NotificationsPage.jsx';
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
         <Route path="/tasks" element={<TasksPage />} />
+        <Route path="/risks" element={<RisksPage />} />
         <Route path="/change-requests" element={<ChangeRequestsPage />} />
         <Route path="/costs" element={<CostsPage />} />
         <Route path="/notifications" element={<NotificationsPage />} />

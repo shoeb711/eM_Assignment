@@ -84,6 +84,13 @@ Allowed transitions: `SUBMITTED â†’ APPROVED / REJECTED / RETURNED`, `RETURNED â
 | POST | `/budget-revisions/:id/decision` | **Admin only**, not own request | `{ decision: APPROVE \| REJECT }` |
 | PUT | `/projects/:projectId/forecasts` | owner PM, Admin | `{ items: [{ month: "2026-10-01", amount }] }` future months only |
 
+## Executive dashboard
+| Method | Path | Who | Notes |
+|---|---|---|---|
+| GET | `/dashboard` | signed in (scoped to visible projects) | Filters: `departmentId, projectId, managerId, status` (project lifecycle), `from, to` (period for trend & category charts, capped at the reporting date), `categoryId` (finance charts only). Returns `kpis`, `projects` (health + budget/actual/EAC), `monthly`, `spendByCategory`, `overdueByOwner`, `riskMatrix`, `milestones` |
+
+Drill-down lists also accept `projectStatus` (`/tasks`, `/costs`, `/risks`) so a drill-down shows exactly the records behind a filtered KPI.
+
 ## Activity
 | Method | Path | Who | Notes |
 |---|---|---|---|

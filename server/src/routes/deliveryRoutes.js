@@ -61,6 +61,7 @@ const riskListSchema = z.object({
   projectId: optionalId,
   departmentId: optionalId,
   managerId: optionalId,
+  projectStatus: z.enum(['PLANNING', 'ACTIVE', 'ON_HOLD', 'COMPLETED', 'CANCELLED']).optional(),
   type: z.enum(RISK_TYPES).optional(),
   status: z.enum(RISK_STATUSES).optional(),
   open: optionalBool,

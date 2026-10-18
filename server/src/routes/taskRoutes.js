@@ -16,6 +16,7 @@ const listSchema = z.object({
   projectId: optionalId,
   departmentId: optionalId,
   managerId: optionalId,
+  projectStatus: z.enum(['PLANNING', 'ACTIVE', 'ON_HOLD', 'COMPLETED', 'CANCELLED']).optional(),
   assigneeId: optionalId,
   mine: optionalBool,
   unassigned: optionalBool,
