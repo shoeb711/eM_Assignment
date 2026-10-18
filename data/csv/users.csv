@@ -1,0 +1,17 @@
+id,department_id,full_name,email,password_hash,role,is_active
+1,2,Layla Haddad,layla.haddad@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,ADMIN,true
+2,1,Omar Farouk,omar.farouk@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,PROJECT_MANAGER,true
+3,2,Priya Nair,priya.nair@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,PROJECT_MANAGER,true
+4,3,Daniel Brooks,daniel.brooks@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,PROJECT_MANAGER,true
+5,1,Mariam Saleh,mariam.saleh@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,PROJECT_MANAGER,true
+6,2,Arjun Mehta,arjun.mehta@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,PROJECT_MANAGER,true
+7,1,Aisha Khan,aisha.khan@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+8,1,Ravi Kumar,ravi.kumar@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+9,1,Fatima Ali,fatima.ali@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+10,2,Chen Wei,chen.wei@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+11,2,Noura Rashid,noura.rashid@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+12,2,Thomas Reid,thomas.reid@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+13,3,Hassan Youssef,hassan.youssef@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+14,3,Elena Petrova,elena.petrova@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+15,3,Karim Mansour,karim.mansour@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true
+16,1,Sofia Martins,sofia.martins@demo.local,$2a$10$eMindsDemoSeedSaltValuvOXNpTTai9nl0GfBymPnXuU8c7vv.d2,CONTRIBUTOR,true

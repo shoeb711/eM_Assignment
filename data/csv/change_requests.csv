@@ -1,0 +1,19 @@
+id,project_id,title,description,cost_impact,schedule_impact_days,status,submitted_by,submitted_at,decided_by,decided_at,decision_reason
+1,2,Add data reconciliation module,Add data reconciliation module for Billing Platform Migration.,150000,30,APPROVED,11,2026-09-04T09:00:00Z,3,2026-09-09T14:00:00Z,Benefit justifies the cost; within delivery tolerance.
+2,9,Extend ERP scope to procurement module,Extend ERP scope to procurement module for ERP Finance Upgrade.,200000,45,APPROVED,11,2026-07-15T09:00:00Z,3,2026-07-20T14:00:00Z,Benefit justifies the cost; within delivery tolerance.
+3,1,Add data reconciliation module,Add data reconciliation module for Customer Portal Revamp.,150000,30,REJECTED,2,2026-06-03T09:00:00Z,1,2026-06-07T14:00:00Z,Not aligned with the current phase priorities.
+4,2,Extend UAT by two weeks,Extend UAT by two weeks for Billing Platform Migration.,25000,14,RETURNED,3,2026-07-11T09:00:00Z,1,2026-07-21T14:00:00Z,Please add a detailed cost breakdown and re-submit.
+5,3,Add Arabic language support,Add Arabic language support for Data Lake Foundation.,60000,21,SUBMITTED,11,2026-08-17T09:00:00Z,,,
+6,4,Switch to managed database service,Switch to managed database service for Network Monitoring Upgrade.,40000,0,APPROVED,4,2026-08-11T09:00:00Z,1,2026-08-17T14:00:00Z,Benefit justifies the cost; within delivery tolerance.
+7,5,Additional reporting dashboard,Additional reporting dashboard for HR Self-Service App.,35000,10,SUBMITTED,11,2026-06-02T09:00:00Z,,,
+8,6,Defer mobile release to phase 2,Defer mobile release to phase 2 for Field Service Mobile App.,-50000,-20,REJECTED,4,2026-07-30T09:00:00Z,1,2026-08-09T14:00:00Z,Not aligned with the current phase priorities.
+9,7,Include single sign-on integration,Include single sign-on integration for Cybersecurity Hardening.,45000,12,APPROVED,12,2026-06-20T09:00:00Z,6,2026-06-22T14:00:00Z,Benefit justifies the cost; within delivery tolerance.
+10,8,Extra performance testing cycle,Extra performance testing cycle for Contact Centre AI Assistant.,18000,7,SUBMITTED,9,2026-09-17T09:00:00Z,,,
+11,9,Upgrade hardware specification,Upgrade hardware specification for ERP Finance Upgrade.,70000,5,RETURNED,3,2026-07-30T09:00:00Z,1,2026-08-04T14:00:00Z,Please add a detailed cost breakdown and re-submit.
+12,10,Add data reconciliation module,Add data reconciliation module for Branch Wi-Fi Rollout.,150000,30,APPROVED,15,2026-09-03T09:00:00Z,4,2026-09-10T14:00:00Z,Benefit justifies the cost; within delivery tolerance.
+13,1,Extend UAT by two weeks,Extend UAT by two weeks for Customer Portal Revamp.,25000,14,SUBMITTED,8,2026-08-05T09:00:00Z,,,
+14,2,Add Arabic language support,Add Arabic language support for Billing Platform Migration.,60000,21,REJECTED,11,2026-06-17T09:00:00Z,3,2026-06-19T14:00:00Z,Not aligned with the current phase priorities.
+15,3,Switch to managed database service,Switch to managed database service for Data Lake Foundation.,40000,0,APPROVED,10,2026-05-19T09:00:00Z,6,2026-05-29T14:00:00Z,Benefit justifies the cost; within delivery tolerance.
+16,4,Additional reporting dashboard,Additional reporting dashboard for Network Monitoring Upgrade.,35000,10,SUBMITTED,4,2026-08-20T09:00:00Z,,,
+17,5,Defer mobile release to phase 2,Defer mobile release to phase 2 for HR Self-Service App.,-50000,-20,APPROVED,12,2026-06-10T09:00:00Z,3,2026-06-13T14:00:00Z,Benefit justifies the cost; within delivery tolerance.
+18,6,Include single sign-on integration,Include single sign-on integration for Field Service Mobile App.,45000,12,SUBMITTED,16,2026-07-20T09:00:00Z,,,

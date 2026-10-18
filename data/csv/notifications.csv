@@ -1,0 +1,16 @@
+id,user_id,project_id,automation_run_id,type,title,message,event_key,is_read,created_at
+1,16,1,1,TASK_OVERDUE,Task overdue: Solution architecture design,"""Solution architecture design"" on PRJ-001 was due on 2026-03-16 and is 55% complete.",TASK_OVERDUE:task:2,true,2026-09-28T06:00:00Z
+2,9,1,1,TASK_OVERDUE,Task overdue: Environment and access setup,"""Environment and access setup"" on PRJ-001 was due on 2026-04-20 and is 47% complete.",TASK_OVERDUE:task:3,false,2026-09-28T06:00:00Z
+3,11,2,1,TASK_OVERDUE,Task overdue: Requirements workshop,"""Requirements workshop"" on PRJ-002 was due on 2025-12-19 and is 46% complete.",TASK_OVERDUE:task:10,false,2026-09-28T06:00:00Z
+4,12,2,1,TASK_OVERDUE,Task overdue: Solution architecture design,"""Solution architecture design"" on PRJ-002 was due on 2026-02-06 and is 43% complete.",TASK_OVERDUE:task:11,true,2026-09-28T06:00:00Z
+5,10,3,1,TASK_OVERDUE,Task overdue: Core build - sprint 2,"""Core build - sprint 2"" on PRJ-003 was due on 2026-08-01 and is 84% complete.",TASK_OVERDUE:task:24,true,2026-09-28T06:00:00Z
+6,15,6,1,TASK_OVERDUE,Task overdue: Environment and access setup,"""Environment and access setup"" on PRJ-006 was due on 2026-06-10 and is 44% complete.",TASK_OVERDUE:task:48,false,2026-09-28T06:00:00Z
+7,13,6,1,TASK_OVERDUE,Task overdue: Core build - sprint 1,"""Core build - sprint 1"" on PRJ-006 was due on 2026-08-16 and is 66% complete.",TASK_OVERDUE:task:50,true,2026-09-28T06:00:00Z
+8,14,6,1,TASK_OVERDUE,Task overdue: Core build - sprint 2,"""Core build - sprint 2"" on PRJ-006 was due on 2026-09-19 and is 60% complete.",TASK_OVERDUE:task:51,false,2026-09-28T06:00:00Z
+9,12,7,1,TASK_OVERDUE,Task overdue: Data model and API design,"""Data model and API design"" on PRJ-007 was due on 2026-05-29 and is 50% complete.",TASK_OVERDUE:task:58,true,2026-09-28T06:00:00Z
+10,10,9,1,TASK_OVERDUE,Task overdue: Core build - sprint 2,"""Core build - sprint 2"" on PRJ-009 was due on 2026-07-02 and is 46% complete.",TASK_OVERDUE:task:78,false,2026-09-28T06:00:00Z
+11,15,10,1,TASK_OVERDUE,Task overdue: Requirements workshop,"""Requirements workshop"" on PRJ-010 was due on 2026-04-25 and is 86% complete.",TASK_OVERDUE:task:82,false,2026-09-28T06:00:00Z
+12,15,10,1,TASK_OVERDUE,Task overdue: Environment and access setup,"""Environment and access setup"" on PRJ-010 was due on 2026-06-13 and is 81% complete.",TASK_OVERDUE:task:84,false,2026-09-28T06:00:00Z
+13,13,10,1,TASK_OVERDUE,Task overdue: Data model and API design,"""Data model and API design"" on PRJ-010 was due on 2026-07-07 and is 42% complete.",TASK_OVERDUE:task:85,false,2026-09-28T06:00:00Z
+14,13,10,1,TASK_OVERDUE,Task overdue: Core build - sprint 1,"""Core build - sprint 1"" on PRJ-010 was due on 2026-08-01 and is 54% complete.",TASK_OVERDUE:task:86,false,2026-09-28T06:00:00Z
+15,13,10,1,TASK_OVERDUE,Task overdue: Core build - sprint 2,"""Core build - sprint 2"" on PRJ-010 was due on 2026-08-25 and is 62% complete.",TASK_OVERDUE:task:87,false,2026-09-28T06:00:00Z

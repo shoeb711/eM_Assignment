@@ -1,0 +1,11 @@
+id,code,name,description,department_id,owner_id,status,start_date,end_date,initial_budget
+1,PRJ-001,Customer Portal Revamp,Delivery of the Customer Portal Revamp initiative.,1,2,ACTIVE,2026-01-05,2026-12-20,1200000
+2,PRJ-002,Billing Platform Migration,Delivery of the Billing Platform Migration initiative.,2,3,ACTIVE,2025-11-01,2027-02-28,2500000
+3,PRJ-003,Data Lake Foundation,Delivery of the Data Lake Foundation initiative.,2,6,ACTIVE,2026-02-01,2026-11-30,900000
+4,PRJ-004,Network Monitoring Upgrade,Delivery of the Network Monitoring Upgrade initiative.,3,4,ACTIVE,2026-08-01,2027-03-31,650000
+5,PRJ-005,HR Self-Service App,Delivery of the HR Self-Service App initiative.,2,3,COMPLETED,2025-09-01,2026-06-30,400000
+6,PRJ-006,Field Service Mobile App,Delivery of the Field Service Mobile App initiative.,3,4,ACTIVE,2026-03-01,2027-01-31,750000
+7,PRJ-007,Cybersecurity Hardening,Delivery of the Cybersecurity Hardening initiative.,2,6,ON_HOLD,2026-01-15,2026-12-15,500000
+8,PRJ-008,Contact Centre AI Assistant,Delivery of the Contact Centre AI Assistant initiative.,1,5,PLANNING,2026-09-01,2027-06-30,1100000
+9,PRJ-009,ERP Finance Upgrade,Delivery of the ERP Finance Upgrade initiative.,2,3,ACTIVE,2025-10-01,2026-12-31,1800000
+10,PRJ-010,Branch Wi-Fi Rollout,Delivery of the Branch Wi-Fi Rollout initiative.,3,4,ACTIVE,2026-04-01,2026-11-30,350000

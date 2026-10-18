@@ -7,9 +7,15 @@
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
-    "db:migrate": "node scripts/migrate.js"
+    "db:migrate": "node scripts/migrate.js",
+    "db:generate": "node seed/generate.js",
+    "db:import": "node seed/import.js",
+    "db:seed": "npm run db:generate && npm run db:import"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "csv-parse": "^5.6.0",
+    "csv-stringify": "^6.9.0",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "pg": "^8.13.1"

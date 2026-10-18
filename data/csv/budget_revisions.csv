@@ -1,0 +1,6 @@
+id,project_id,amount,reason,status,change_request_id,requested_by,requested_at,decided_by,decided_at
+1,2,150000,Funding for approved data reconciliation module (CR-1).,APPROVED,1,3,2026-06-10T10:00:00Z,1,2026-06-12T10:00:00Z
+2,9,200000,Funding for procurement scope extension (CR-2).,APPROVED,2,3,2026-05-04T10:00:00Z,1,2026-05-06T10:00:00Z
+3,1,80000,Additional accessibility testing budget.,PENDING,,2,2026-09-25T10:00:00Z,,
+4,6,60000,Offline mode for field engineers.,REJECTED,,4,2026-07-15T10:00:00Z,1,2026-07-20T10:00:00Z
+5,10,25000,Extra access points for two large branches.,PENDING,,4,2026-09-22T10:00:00Z,,

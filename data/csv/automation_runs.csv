@@ -1,0 +1,5 @@
+id,job_name,status,started_at,finished_at,items_processed,attempt,error_message
+1,overdue-task-alerts,SUCCESS,2026-09-28T06:00:00Z,2026-09-28T06:01:00Z,15,1,
+2,overdue-task-alerts,FAILED,2026-09-29T06:00:00Z,2026-09-29T06:01:00Z,0,1,Database connection timeout
+3,overdue-task-alerts,SUCCESS,2026-09-29T06:05:00Z,2026-09-29T06:05:00Z,0,2,
+4,overdue-task-alerts,SUCCESS,2026-09-30T06:00:00Z,2026-09-30T06:01:00Z,0,1,

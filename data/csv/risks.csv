@@ -1,0 +1,27 @@
+id,project_id,type,title,description,owner_id,probability,impact,mitigation,due_date,status
+1,1,RISK,Licence cost increase at renewal,Licence cost increase at renewal affecting Customer Portal Revamp.,2,5,4,Negotiate multi-year pricing,2026-10-28,MITIGATING
+2,1,RISK,Key vendor delivery delay,Key vendor delivery delay affecting Customer Portal Revamp.,7,4,4,Weekly vendor checkpoint and penalty clause,2026-11-13,MITIGATING
+3,1,ISSUE,Legacy data quality problems,Legacy data quality problems affecting Customer Portal Revamp.,2,5,1,Data cleansing sprint before migration,2026-11-27,OPEN
+4,2,RISK,Specialist resource availability,Specialist resource availability affecting Billing Platform Migration.,11,5,5,Cross-train a second engineer,2026-10-03,MITIGATING
+5,2,RISK,Key vendor delivery delay,Key vendor delivery delay affecting Billing Platform Migration.,3,5,1,Weekly vendor checkpoint and penalty clause,2026-11-05,OPEN
+6,3,RISK,Licence cost increase at renewal,Licence cost increase at renewal affecting Data Lake Foundation.,12,3,3,Negotiate multi-year pricing,2026-10-09,OPEN
+7,3,ISSUE,Legacy data quality problems,Legacy data quality problems affecting Data Lake Foundation.,11,5,2,Data cleansing sprint before migration,2026-10-09,CLOSED
+8,4,RISK,Scope creep from business stakeholders,Scope creep from business stakeholders affecting Network Monitoring Upgrade.,13,5,1,Strict change-request process,2026-09-29,OPEN
+9,4,ISSUE,Security review findings outstanding,Security review findings outstanding affecting Network Monitoring Upgrade.,4,4,5,Remediation plan with security team,2026-11-11,OPEN
+10,4,ISSUE,Legacy data quality problems,Legacy data quality problems affecting Network Monitoring Upgrade.,13,3,4,Data cleansing sprint before migration,2026-09-11,OPEN
+11,5,RISK,Licence cost increase at renewal,Licence cost increase at renewal affecting HR Self-Service App.,3,1,1,Negotiate multi-year pricing,2026-11-14,CLOSED
+12,5,RISK,Scope creep from business stakeholders,Scope creep from business stakeholders affecting HR Self-Service App.,11,1,1,Strict change-request process,2026-10-14,CLOSED
+13,6,ISSUE,Integration API instability,Integration API instability affecting Field Service Mobile App.,15,3,5,Add retries and monitoring on the integration,2026-09-23,MITIGATING
+14,6,ISSUE,Integration API instability,Integration API instability affecting Field Service Mobile App.,15,2,3,Add retries and monitoring on the integration,2026-11-03,MITIGATING
+15,7,RISK,Specialist resource availability,Specialist resource availability affecting Cybersecurity Hardening.,12,1,1,Cross-train a second engineer,2026-09-18,OPEN
+16,7,RISK,Specialist resource availability,Specialist resource availability affecting Cybersecurity Hardening.,6,3,5,Cross-train a second engineer,2026-11-03,OPEN
+17,7,ISSUE,Integration API instability,Integration API instability affecting Cybersecurity Hardening.,12,4,4,Add retries and monitoring on the integration,2026-11-15,OPEN
+18,8,ISSUE,Legacy data quality problems,Legacy data quality problems affecting Contact Centre AI Assistant.,16,2,2,Data cleansing sprint before migration,2026-10-24,OPEN
+19,8,ISSUE,Legacy data quality problems,Legacy data quality problems affecting Contact Centre AI Assistant.,9,2,3,Data cleansing sprint before migration,2026-10-19,CLOSED
+20,9,ISSUE,Security review findings outstanding,Security review findings outstanding affecting ERP Finance Upgrade.,10,1,1,Remediation plan with security team,2026-10-06,OPEN
+21,9,RISK,Specialist resource availability,Specialist resource availability affecting ERP Finance Upgrade.,11,5,1,Cross-train a second engineer,2026-09-11,OPEN
+22,10,RISK,Insufficient test environment capacity,Insufficient test environment capacity affecting Branch Wi-Fi Rollout.,4,2,3,Reserve cloud capacity in advance,2026-11-04,MITIGATING
+23,10,RISK,Insufficient test environment capacity,Insufficient test environment capacity affecting Branch Wi-Fi Rollout.,15,2,1,Reserve cloud capacity in advance,2026-10-31,MITIGATING
+24,10,RISK,Insufficient test environment capacity,Insufficient test environment capacity affecting Branch Wi-Fi Rollout.,15,1,4,Reserve cloud capacity in advance,2026-10-19,MITIGATING
+25,9,RISK,Payroll cut-over failure,Payroll cut-over failure affecting ERP Finance Upgrade.,10,5,4,Parallel run completed successfully,2026-11-10,CLOSED
+26,2,RISK,Data migration window too short,Data migration window too short affecting Billing Platform Migration.,3,4,5,Rehearse migration twice; agree weekend outage,2026-11-13,OPEN

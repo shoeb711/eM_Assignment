@@ -1,0 +1,34 @@
+id,project_id,name,due_date,status,completed_at
+1,1,Design sign-off,2026-04-02,ACHIEVED,2026-04-01
+2,1,Build complete,2026-08-20,ACHIEVED,2026-08-19
+3,1,Go-live,2026-12-20,PLANNED,
+4,2,Design sign-off,2026-03-02,ACHIEVED,2026-02-27
+5,2,Build complete,2026-09-12,ACHIEVED,2026-09-12
+6,2,Go-live,2027-02-28,PLANNED,
+7,3,Design sign-off,2026-04-18,ACHIEVED,2026-04-18
+8,3,Build complete,2026-08-16,ACHIEVED,2026-08-16
+9,3,Go-live,2026-11-30,PLANNED,
+10,4,Design sign-off,2026-10-01,IN_PROGRESS,
+11,4,Build complete,2027-01-05,PLANNED,
+12,4,Go-live,2027-03-31,PLANNED,
+13,5,Design sign-off,2025-11-16,ACHIEVED,2025-11-15
+14,5,Build complete,2026-03-16,ACHIEVED,2026-03-15
+15,5,Go-live,2026-06-30,ACHIEVED,2026-06-30
+16,6,Design sign-off,2026-05-24,ACHIEVED,2026-05-24
+17,6,Build complete,2026-10-05,IN_PROGRESS,
+18,6,Go-live,2027-01-31,PLANNED,
+19,7,Design sign-off,2026-04-09,MISSED,
+20,7,Build complete,2026-08-20,ACHIEVED,2026-08-19
+21,7,Go-live,2026-12-15,PLANNED,
+22,8,Design sign-off,2026-11-16,PLANNED,
+23,8,Build complete,2027-03-16,PLANNED,
+24,8,Go-live,2027-06-30,PLANNED,
+25,9,Design sign-off,2026-01-23,ACHIEVED,2026-01-22
+26,9,Build complete,2026-07-24,MISSED,
+27,9,Go-live,2026-12-31,PLANNED,
+28,10,Design sign-off,2026-06-01,ACHIEVED,2026-05-31
+29,10,Build complete,2026-09-06,ACHIEVED,2026-09-06
+30,10,Go-live,2026-11-30,PLANNED,
+31,1,Beta release to pilot users,2026-10-08,IN_PROGRESS,
+32,3,Data platform readiness review,2026-10-12,IN_PROGRESS,
+33,10,Pilot branches live,2026-10-05,IN_PROGRESS,

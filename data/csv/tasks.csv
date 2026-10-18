@@ -1,0 +1,91 @@
+id,project_id,title,description,assignee_id,status,priority,start_date,due_date,weight,progress,completed_at
+1,1,Requirements workshop,Requirements workshop for Customer Portal Revamp.,16,IN_PROGRESS,MEDIUM,2026-01-05,2026-09-30,5,60,
+2,1,Solution architecture design,Solution architecture design for Customer Portal Revamp.,16,BLOCKED,HIGH,2026-02-09,2026-03-16,4,55,
+3,1,Environment and access setup,Environment and access setup for Customer Portal Revamp.,9,BLOCKED,HIGH,2026-03-16,2026-04-20,3,47,
+4,1,Data model and API design,Data model and API design for Customer Portal Revamp.,9,DONE,CRITICAL,2026-04-20,2026-05-25,3,100,2026-05-23
+5,1,Core build - sprint 1,Core build - sprint 1 for Customer Portal Revamp.,7,DONE,HIGH,2026-05-25,2026-06-29,3,100,2026-06-27
+6,1,Core build - sprint 2,Core build - sprint 2 for Customer Portal Revamp.,9,DONE,MEDIUM,2026-06-29,2026-08-02,5,100,2026-08-02
+7,1,Integration testing,Integration testing for Customer Portal Revamp.,8,DONE,HIGH,2026-08-02,2026-09-06,2,100,2026-09-01
+8,1,User acceptance testing,User acceptance testing for Customer Portal Revamp.,9,IN_PROGRESS,HIGH,2026-09-06,2026-10-11,3,68,
+9,1,Go-live and handover,Go-live and handover for Customer Portal Revamp.,8,TODO,MEDIUM,2026-10-11,2026-11-15,4,0,
+10,2,Requirements workshop,Requirements workshop for Billing Platform Migration.,11,IN_PROGRESS,LOW,2025-11-01,2025-12-19,2,46,
+11,2,Solution architecture design,Solution architecture design for Billing Platform Migration.,12,IN_PROGRESS,HIGH,2025-12-19,2026-02-06,2,43,
+12,2,Environment and access setup,Environment and access setup for Billing Platform Migration.,12,DONE,CRITICAL,2026-02-06,2026-03-26,3,100,2026-03-24
+13,2,Data model and API design,Data model and API design for Billing Platform Migration.,11,DONE,HIGH,2026-03-26,2026-05-14,2,100,2026-05-14
+14,2,Core build - sprint 1,Core build - sprint 1 for Billing Platform Migration.,10,DONE,CRITICAL,2026-05-14,2026-07-01,2,100,2026-06-30
+15,2,Core build - sprint 2,Core build - sprint 2 for Billing Platform Migration.,12,DONE,HIGH,2026-07-01,2026-08-18,5,100,2026-08-16
+16,2,Integration testing,Integration testing for Billing Platform Migration.,12,IN_PROGRESS,HIGH,2026-08-18,2026-10-06,3,36,
+17,2,User acceptance testing,User acceptance testing for Billing Platform Migration.,11,TODO,LOW,2026-10-06,2026-11-23,5,0,
+18,2,Go-live and handover,Go-live and handover for Billing Platform Migration.,11,TODO,MEDIUM,2026-11-23,2027-01-11,5,0,
+19,3,Requirements workshop,Requirements workshop for Data Lake Foundation.,11,DONE,MEDIUM,2026-02-01,2026-03-03,4,100,2026-03-03
+20,3,Solution architecture design,Solution architecture design for Data Lake Foundation.,10,DONE,HIGH,2026-03-03,2026-04-02,3,100,2026-03-28
+21,3,Environment and access setup,Environment and access setup for Data Lake Foundation.,10,DONE,HIGH,2026-04-02,2026-05-03,3,100,2026-05-01
+22,3,Data model and API design,Data model and API design for Data Lake Foundation.,12,DONE,CRITICAL,2026-05-03,2026-06-02,3,100,2026-05-31
+23,3,Core build - sprint 1,Core build - sprint 1 for Data Lake Foundation.,11,DONE,MEDIUM,2026-06-02,2026-07-02,3,100,2026-06-28
+24,3,Core build - sprint 2,Core build - sprint 2 for Data Lake Foundation.,10,BLOCKED,CRITICAL,2026-07-02,2026-08-01,1,84,
+25,3,Integration testing,Integration testing for Data Lake Foundation.,11,DONE,MEDIUM,2026-08-01,2026-08-31,5,100,2026-08-28
+26,3,User acceptance testing,User acceptance testing for Data Lake Foundation.,10,IN_PROGRESS,MEDIUM,2026-08-31,2026-10-01,2,69,
+27,3,Go-live and handover,Go-live and handover for Data Lake Foundation.,10,TODO,LOW,2026-10-01,2026-10-31,4,0,
+28,4,Requirements workshop,Requirements workshop for Network Monitoring Upgrade.,14,DONE,CRITICAL,2026-08-01,2026-08-25,5,100,2026-08-20
+29,4,Solution architecture design,Solution architecture design for Network Monitoring Upgrade.,14,DONE,HIGH,2026-08-25,2026-09-18,1,100,2026-09-18
+30,4,Environment and access setup,Environment and access setup for Network Monitoring Upgrade.,15,IN_PROGRESS,HIGH,2026-09-18,2026-10-13,5,64,
+31,4,Data model and API design,Data model and API design for Network Monitoring Upgrade.,15,TODO,HIGH,2026-10-13,2026-11-06,3,0,
+32,4,Core build - sprint 1,Core build - sprint 1 for Network Monitoring Upgrade.,13,TODO,CRITICAL,2026-11-06,2026-11-30,5,0,
+33,4,Core build - sprint 2,Core build - sprint 2 for Network Monitoring Upgrade.,14,TODO,MEDIUM,2026-11-30,2026-12-24,4,0,
+34,4,Integration testing,Integration testing for Network Monitoring Upgrade.,14,TODO,HIGH,2026-12-24,2027-01-17,2,0,
+35,4,User acceptance testing,User acceptance testing for Network Monitoring Upgrade.,14,TODO,LOW,2027-01-17,2027-02-11,4,0,
+36,4,Go-live and handover,Go-live and handover for Network Monitoring Upgrade.,13,TODO,MEDIUM,2027-02-11,2027-03-07,4,0,
+37,5,Requirements workshop,Requirements workshop for HR Self-Service App.,11,DONE,HIGH,2025-09-01,2025-10-01,3,100,2025-09-27
+38,5,Solution architecture design,Solution architecture design for HR Self-Service App.,11,DONE,CRITICAL,2025-10-01,2025-10-31,4,100,2025-10-26
+39,5,Environment and access setup,Environment and access setup for HR Self-Service App.,11,DONE,LOW,2025-10-31,2025-12-01,3,100,2025-11-27
+40,5,Data model and API design,Data model and API design for HR Self-Service App.,11,DONE,LOW,2025-12-01,2025-12-31,2,100,2025-12-27
+41,5,Core build - sprint 1,Core build - sprint 1 for HR Self-Service App.,12,DONE,HIGH,2025-12-31,2026-01-30,2,100,2026-01-28
+42,5,Core build - sprint 2,Core build - sprint 2 for HR Self-Service App.,11,DONE,HIGH,2026-01-30,2026-03-01,4,100,2026-02-26
+43,5,Integration testing,Integration testing for HR Self-Service App.,12,DONE,HIGH,2026-03-01,2026-03-31,5,100,2026-03-29
+44,5,User acceptance testing,User acceptance testing for HR Self-Service App.,12,DONE,CRITICAL,2026-03-31,2026-05-01,3,100,2026-04-28
+45,5,Go-live and handover,Go-live and handover for HR Self-Service App.,12,DONE,HIGH,2026-05-01,2026-05-31,4,100,2026-05-29
+46,6,Requirements workshop,Requirements workshop for Field Service Mobile App.,14,DONE,CRITICAL,2026-03-01,2026-04-04,1,100,2026-04-03
+47,6,Solution architecture design,Solution architecture design for Field Service Mobile App.,16,DONE,HIGH,2026-04-04,2026-05-07,4,100,2026-05-05
+48,6,Environment and access setup,Environment and access setup for Field Service Mobile App.,15,IN_PROGRESS,HIGH,2026-05-07,2026-06-10,5,44,
+49,6,Data model and API design,Data model and API design for Field Service Mobile App.,14,DONE,HIGH,2026-06-10,2026-07-13,5,100,2026-07-12
+50,6,Core build - sprint 1,Core build - sprint 1 for Field Service Mobile App.,13,BLOCKED,CRITICAL,2026-07-13,2026-08-16,2,66,
+51,6,Core build - sprint 2,Core build - sprint 2 for Field Service Mobile App.,14,IN_PROGRESS,HIGH,2026-08-16,2026-09-19,4,60,
+52,6,Integration testing,Integration testing for Field Service Mobile App.,15,IN_PROGRESS,MEDIUM,2026-09-19,2026-10-22,2,67,
+53,6,User acceptance testing,User acceptance testing for Field Service Mobile App.,,TODO,CRITICAL,2026-10-22,2026-11-25,1,0,
+54,6,Go-live and handover,Go-live and handover for Field Service Mobile App.,13,TODO,HIGH,2026-11-25,2026-12-28,5,0,
+55,7,Requirements workshop,Requirements workshop for Cybersecurity Hardening.,12,DONE,CRITICAL,2026-01-15,2026-02-17,2,100,2026-02-14
+56,7,Solution architecture design,Solution architecture design for Cybersecurity Hardening.,12,DONE,MEDIUM,2026-02-17,2026-03-23,1,100,2026-03-23
+57,7,Environment and access setup,Environment and access setup for Cybersecurity Hardening.,12,DONE,CRITICAL,2026-03-23,2026-04-25,5,100,2026-04-24
+58,7,Data model and API design,Data model and API design for Cybersecurity Hardening.,12,IN_PROGRESS,HIGH,2026-04-25,2026-05-29,3,50,
+59,7,Core build - sprint 1,Core build - sprint 1 for Cybersecurity Hardening.,12,DONE,LOW,2026-05-29,2026-07-01,5,100,2026-06-27
+60,7,Core build - sprint 2,Core build - sprint 2 for Cybersecurity Hardening.,12,DONE,HIGH,2026-07-01,2026-08-03,1,100,2026-08-02
+61,7,Integration testing,Integration testing for Cybersecurity Hardening.,10,DONE,MEDIUM,2026-08-03,2026-09-06,4,100,2026-09-05
+62,7,User acceptance testing,User acceptance testing for Cybersecurity Hardening.,10,IN_PROGRESS,LOW,2026-09-06,2026-10-09,2,18,
+63,7,Go-live and handover,Go-live and handover for Cybersecurity Hardening.,10,TODO,LOW,2026-10-09,2026-11-12,4,0,
+64,8,Requirements workshop,Requirements workshop for Contact Centre AI Assistant.,7,IN_PROGRESS,HIGH,2026-09-01,2026-10-01,2,39,
+65,8,Solution architecture design,Solution architecture design for Contact Centre AI Assistant.,9,TODO,MEDIUM,2026-10-01,2026-10-31,5,0,
+66,8,Environment and access setup,Environment and access setup for Contact Centre AI Assistant.,16,TODO,HIGH,2026-10-31,2026-12-01,3,0,
+67,8,Data model and API design,Data model and API design for Contact Centre AI Assistant.,7,TODO,MEDIUM,2026-12-01,2026-12-31,4,0,
+68,8,Core build - sprint 1,Core build - sprint 1 for Contact Centre AI Assistant.,16,TODO,HIGH,2026-12-31,2027-01-30,1,0,
+69,8,Core build - sprint 2,Core build - sprint 2 for Contact Centre AI Assistant.,16,TODO,CRITICAL,2027-01-30,2027-03-01,4,0,
+70,8,Integration testing,Integration testing for Contact Centre AI Assistant.,7,TODO,LOW,2027-03-01,2027-03-31,1,0,
+71,8,User acceptance testing,User acceptance testing for Contact Centre AI Assistant.,16,TODO,HIGH,2027-03-31,2027-05-01,1,0,
+72,8,Go-live and handover,Go-live and handover for Contact Centre AI Assistant.,9,TODO,LOW,2027-05-01,2027-05-31,1,0,
+73,9,Requirements workshop,Requirements workshop for ERP Finance Upgrade.,11,DONE,LOW,2025-10-01,2025-11-16,3,100,2025-11-12
+74,9,Solution architecture design,Solution architecture design for ERP Finance Upgrade.,11,DONE,MEDIUM,2025-11-16,2025-12-31,4,100,2025-12-31
+75,9,Environment and access setup,Environment and access setup for ERP Finance Upgrade.,10,DONE,MEDIUM,2025-12-31,2026-02-15,4,100,2026-02-11
+76,9,Data model and API design,Data model and API design for ERP Finance Upgrade.,10,DONE,MEDIUM,2026-02-15,2026-04-01,2,100,2026-03-31
+77,9,Core build - sprint 1,Core build - sprint 1 for ERP Finance Upgrade.,11,DONE,HIGH,2026-04-01,2026-05-17,1,100,2026-05-13
+78,9,Core build - sprint 2,Core build - sprint 2 for ERP Finance Upgrade.,10,IN_PROGRESS,HIGH,2026-05-17,2026-07-02,3,46,
+79,9,Integration testing,Integration testing for ERP Finance Upgrade.,10,DONE,HIGH,2026-07-02,2026-08-16,2,100,2026-08-11
+80,9,User acceptance testing,User acceptance testing for ERP Finance Upgrade.,10,IN_PROGRESS,MEDIUM,2026-08-16,2026-10-01,3,54,
+81,9,Go-live and handover,Go-live and handover for ERP Finance Upgrade.,10,TODO,CRITICAL,2026-10-01,2026-11-15,5,0,
+82,10,Requirements workshop,Requirements workshop for Branch Wi-Fi Rollout.,15,BLOCKED,HIGH,2026-04-01,2026-04-25,2,86,
+83,10,Solution architecture design,Solution architecture design for Branch Wi-Fi Rollout.,13,DONE,LOW,2026-04-25,2026-05-20,5,100,2026-05-20
+84,10,Environment and access setup,Environment and access setup for Branch Wi-Fi Rollout.,15,IN_PROGRESS,HIGH,2026-05-20,2026-06-13,4,81,
+85,10,Data model and API design,Data model and API design for Branch Wi-Fi Rollout.,13,IN_PROGRESS,HIGH,2026-06-13,2026-07-07,3,42,
+86,10,Core build - sprint 1,Core build - sprint 1 for Branch Wi-Fi Rollout.,13,IN_PROGRESS,CRITICAL,2026-07-07,2026-08-01,4,54,
+87,10,Core build - sprint 2,Core build - sprint 2 for Branch Wi-Fi Rollout.,13,BLOCKED,CRITICAL,2026-08-01,2026-08-25,1,62,
+88,10,Integration testing,Integration testing for Branch Wi-Fi Rollout.,14,DONE,MEDIUM,2026-08-25,2026-09-18,2,100,2026-09-13
+89,10,User acceptance testing,User acceptance testing for Branch Wi-Fi Rollout.,14,IN_PROGRESS,MEDIUM,2026-09-18,2026-10-12,4,28,
+90,10,Go-live and handover,Go-live and handover for Branch Wi-Fi Rollout.,13,TODO,HIGH,2026-10-12,2026-11-06,2,0,
