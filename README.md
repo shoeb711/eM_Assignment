@@ -1,6 +1,44 @@
 # eMinds Assignment — Project Portfolio & Financial Control Portal
 
-Full-stack PMO portal: React (Vite + Tailwind) → Express API → PostgreSQL (`pg` + plain SQL migrations).
+A working PMO portal: project portfolio, tasks & milestones, risks & issues, change-request approvals,
+financial control (budgets, revisions, costs, forecasts, EAC) and a live executive dashboard - with
+role-based access enforced on the server, an automation, automated tests and full documentation.
+
+**Stack:** React 19 (Vite, Tailwind, TanStack Query, Recharts) → Node.js / Express 5 → PostgreSQL 16 (Docker, `pg` + plain SQL migrations) · Vitest + Supertest.
+
+## Where to find each requirement
+
+| Assignment section | Where |
+|---|---|
+| 1–2 Business journeys & modules | The app (see *Demo walkthrough* below) · [`docs/testing.md`](docs/testing.md) checklist |
+| 3.1 Frontend | `client/src` - responsive shell, forms with validation & confirmations, search/filter/sort/pagination, loading/empty/error states |
+| 3.2 Backend & API | `server/src` (routes → services → db) · [`docs/api-routes.md`](docs/api-routes.md) · `docs/postman_collection.json` |
+| 3.3 Database design | `server/db/migrations/001_init.sql` · [`docs/er-diagram.md`](docs/er-diagram.md) |
+| 3.4 Auth, RBAC, security | [`docs/security.md`](docs/security.md) |
+| 3.5 Quality: logging, concurrency, tests | [`docs/architecture.md`](docs/architecture.md) · [`docs/testing.md`](docs/testing.md) · `server/logs/app.log` · `npm test` |
+| 4 Financial module | Project → *Finance* tab · `server/src/sql/projectFinancials.js` |
+| 5 Executive dashboard | *Dashboard* page · `server/src/services/dashboardService.js` |
+| 6 Synthetic data & CSVs | `server/seed/` · `data/csv/` · [`docs/data-dictionary.md`](docs/data-dictionary.md) |
+| 7 SQL queries & KPI reconciliation | [`docs/sql/report-queries.sql`](docs/sql/report-queries.sql) · [`docs/kpi-reconciliation.md`](docs/kpi-reconciliation.md) |
+| 8.1 Business automation | `server/src/jobs/overdueTaskAlerts.js` · *Audit & automation* page |
+| 9 AI-assisted development | [`docs/ai-development-log.md`](docs/ai-development-log.md) |
+| 10 Acceptance tests A–H | [`docs/testing.md`](docs/testing.md) |
+
+### Scope notes
+- **Power BI (.pbix) - not delivered.** I have no hands-on Power BI experience and chose to spend the time on a fully working application. The four SQL report queries and the KPI reconciliation (SQL vs web dashboard) are included.
+- **MS Access / VBA (optional) - not delivered.**
+- **Hosting:** runs locally (allowed by the brief).
+
+## Demo walkthrough (5 minutes)
+Password for every user: `Demo@123`. Reset to the baseline any time: `cd server && npm run db:import`.
+
+1. **Layla (Admin)** → *Dashboard*: KPIs, charts, filters; click *Actual spend* → the exact transactions (total matches the KPI).
+2. **Priya (PM)** → *Projects* → **+ New project** → add a task (journey 1).
+3. **Chen (Contributor)** → *Tasks* → *My tasks* → update progress (journey 2); note there is no *Add cost* button anywhere.
+4. **Priya** → PRJ-002 → *Milestones* / *Risks* → edit (journey 3) → *Finance* → **+ Add cost**, date ≤ 30 Sep 2026, *Post immediately* (journey 4).
+5. **Chen** → PRJ-002 → *Change requests* → submit; **Priya** → *Change requests* → approve with a reason → history shows 2 entries (journey 5).
+6. **Layla** → *Dashboard* → filter by department → drill into overdue tasks (journey 6) → *Audit & automation* → **Run now** (tick *Simulate a failure* to see the retry).
+7. **Postman** → import `docs/postman_collection.json` → run folder 1 → contributor gets 403 on approval and cost posting.
 
 ## Prerequisites
 - Node.js 20+
@@ -119,7 +157,8 @@ server/              Express API (routes -> services -> database)
     sql/             shared SQL for financial KPIs
     middleware/      login check, request ID, logging, error handling
     utils/           access rules, list/filter helpers, errors, logger
-docs/                API route list, Postman collection
+docs/                API routes, Postman collection, ER diagram, data dictionary, SQL queries,
+                     architecture, security, testing, KPI reconciliation, AI development log
 client/              React frontend (Vite + Tailwind)
   src/api/           apiFetch() + every endpoint in one file (endpoints.js)
   src/auth/          who is signed in (AuthContext)
