@@ -1,0 +1,17 @@
+{
+  "name": "eminds-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project Portfolio & Financial Control Portal - Express API",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:migrate": "node scripts/migrate.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "pg": "^8.13.1"
+  }
+}

@@ -1,0 +1,22 @@
+# Runs PostgreSQL in a Docker container ("Postgres in a box").
+#   Start:  docker compose up -d
+#   Stop:   docker compose down        (data is kept in the "pgdata" volume)
+#   Reset:  docker compose down -v     (deletes the data volume too)
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: eminds-postgres
+    restart: unless-stopped
+    env_file: .env            # POSTGRES_USER / POSTGRES_PASSWORD / POSTGRES_DB come from the root .env file
+    ports:
+      - "5433:5432"           # laptop port 5433 -> container port 5432 (5433 avoids clashing with any local Postgres)
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:

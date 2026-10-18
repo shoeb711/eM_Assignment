@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# secrets - only the *.env.example templates are committed
+.env
+
+# build / test output
+dist/
+coverage/
+
+# logs and OS files
+*.log
+.DS_Store
+Thumbs.db
